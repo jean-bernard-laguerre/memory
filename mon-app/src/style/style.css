@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    --front-color: rgb(162, 239, 162);
+    --back-color: rgb(147, 70, 70);
+    margin: 0;
+    height: 100vh;
+}
+
+#root, .App{
+    height: 100%;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Board {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+}
+
+.Card {
+    width: 125px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+}
+
+.Front {
+    background-color: var(--front-color);
+}
+
+.Back {
+    background-color: var(--back-color);
+}
