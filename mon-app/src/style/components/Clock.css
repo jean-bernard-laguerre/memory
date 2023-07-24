@@ -1,0 +1,15 @@
+.Clock {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: lightgray;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    margin: 1%;
+}
+
+.Clock-digits {
+    font-size: larger;
+    width: 50%;
+}

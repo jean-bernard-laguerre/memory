@@ -1,20 +1,18 @@
 import React from "react";
+import "../../style/components/Card.css"
 
 function Card(props) {
     return <>
-        {(props.state === 0 ) ?
-            (
-                <div onClick={props.handleClick} className="Card Back">
+        <div onClick={props.handleClick}  className="Card-container">
+            <div className={`Card State${props.state}`}>
+                <div className="Card-Face Back">
                     <h1>?</h1>
                 </div>
-            )
-            :
-            (
-                <div onClick={props.handleClick} className="Card Front">
+                <div className="Card-Face Front">
                     <h1>{props.value}</h1>
                 </div>
-            )
-        }
+            </div>
+        </div>
     </>
 }
 
