@@ -22,13 +22,12 @@ function Board() {
         }
 
         if (gameOn === true) {
-            timer = setInterval(() =>  setClock(clock + 1), 1000)
+            timer = setTimeout(() =>  setClock(clock + 1), 1000)
         }
 
         return () => {
-            clearInterval(timer)
+            clearTimeout(timer)
         }
-
     }, [boardState, memory, clock, gameOn])
 
     const shuffle = (array) => { 
@@ -56,18 +55,18 @@ function Board() {
 
         let card1 = newBoard[memory[0].index]
         let card2 = newBoard[memory[1].index]
-
-        if (card1.value !== card2.value) {
-
-            newBoard[memory[0].index].state = 0
-            newBoard[memory[1].index].state = 0
-            setBoardState(newBoard)
-        }
-
+        
         setTimeout(() => {
-            setMemory(memory.slice(2))
-            setTurns(turns+1)
-        }, 500);
+            if (card1.value !== card2.value) {
+                newBoard[memory[0].index].state = 0
+                newBoard[memory[1].index].state = 0
+                setBoardState(newBoard)
+            }            
+        }, 300);
+        
+        setMemory(memory.slice(2))
+        setTurns(turns+1)
+        
     }
 
     const winCheck = () => {
@@ -82,8 +81,8 @@ function Board() {
         })
         if(win) {
             alert("Victoire")
-            setGameOn(false)
             saveScore(clock, turns)
+            setGameOn(false)
         }
     }
 

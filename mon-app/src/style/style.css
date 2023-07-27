@@ -24,11 +24,18 @@ body {
     align-items: center;
 }
 
-.Board, .Best-Score {
+.Board{
     flex: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 600px;
+}
+
+.Best-Score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
 }

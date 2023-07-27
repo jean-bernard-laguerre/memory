@@ -11,7 +11,7 @@ export function saveScore(time, turns) {
     }
     
     let best_score = JSON.parse(localStorage.best_score)
-    if(score.turns > best_score.turns) {
+    if(score.turns < best_score.turns) {
         localStorage.best_score = JSON.stringify(score)
     }
 }
